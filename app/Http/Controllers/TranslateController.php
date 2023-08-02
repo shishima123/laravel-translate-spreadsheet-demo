@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\SpreadsheetTranslate;
 use Illuminate\Http\Request;
+use Shishima\TranslateSpreadsheet\Facades\TranslateSpreadsheet;
 
 class TranslateController extends Controller
 {
@@ -15,7 +15,7 @@ class TranslateController extends Controller
     public function store(Request $request)
     {
         $fileInput = $request->file('file');
-        $output = SpreadsheetTranslate::translate($fileInput);
+        $output = TranslateSpreadsheet::translate($fileInput);
         return response()->download($output)->deleteFileAfterSend(true);
     }
 }
