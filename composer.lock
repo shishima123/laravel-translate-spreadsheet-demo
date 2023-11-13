@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d32047ea43997d35bd709b4359aa420",
+    "content-hash": "252acfb0b41691b683d4d10dc9d642f7",
     "packages": [
         {
             "name": "brick/math",
@@ -3399,14 +3399,20 @@
         {
             "name": "shishima/laravel-translate-spreadsheet",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shishima123/laravel-translate-spreadsheet.git",
+                "reference": "240521322c7be26beaf4892446475f702dc40a1f"
+            },
             "dist": {
-                "type": "path",
-                "url": "packages/shishima/laravel-translate-spreadsheet",
-                "reference": "28ece0644e0ee6bc7a0fbf9bd9217665f836cab1"
+                "type": "zip",
+                "url": "https://api.github.com/repos/shishima123/laravel-translate-spreadsheet/zipball/240521322c7be26beaf4892446475f702dc40a1f",
+                "reference": "240521322c7be26beaf4892446475f702dc40a1f",
+                "shasum": ""
             },
             "require": {
                 "illuminate/support": "^8.0|^9.0|^10.0",
-                "php": "^7.4|^8.0",
+                "php": "^8.1",
                 "phpoffice/phpspreadsheet": "^1.29",
                 "stichoza/google-translate-php": "^5.1"
             },
@@ -3414,6 +3420,7 @@
                 "orchestra/testbench": "^6.0",
                 "phpunit/phpunit": "^9.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -3430,19 +3437,7 @@
                     "Shishima\\TranslateSpreadsheet\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Shishima\\TranslateSpreadsheet\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/phpunit"
-                ],
-                "test-coverage": [
-                    "vendor/bin/phpunit --coverage-html coverage"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3459,9 +3454,11 @@
                 "shishima",
                 "translate-spreadsheet"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/shishima123/laravel-translate-spreadsheet/issues",
+                "source": "https://github.com/shishima123/laravel-translate-spreadsheet/tree/main"
+            },
+            "time": "2023-08-08T10:14:55+00:00"
         },
         {
             "name": "stichoza/google-translate-php",
@@ -8495,9 +8492,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "shishima/laravel-translate-spreadsheet": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
