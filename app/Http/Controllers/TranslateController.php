@@ -14,8 +14,9 @@ class TranslateController extends Controller
 
     public function store(Request $request)
     {
-        $fileInput = $request->file('file');
-        $output = TranslateSpreadsheet::translate($fileInput);
+        $output = TranslateSpreadsheet::setTransSource($request->source)
+            ->setTransTarget($request->target)
+            ->translate($request->file('file'));
         return response()->download($output)->deleteFileAfterSend(true);
     }
 }
