@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Shishima\TranslateSpreadsheet\Facades\TranslateSpreadsheet;
-
+set_time_limit(0);
 class TranslateController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        return view('index');
     }
 
     public function store(Request $request)
