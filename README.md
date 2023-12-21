@@ -6,6 +6,14 @@
 
     sail up
 
+#### Create .env
+
+    cp .env.example .env
+
+#### Key generate
+
+    sail php artisan key:generate
+
 #### Run After clone first
 
     docker run --rm \
