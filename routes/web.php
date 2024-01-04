@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\TranslateController::class, 'index']);
 
 Route::post("/", [\App\Http\Controllers\TranslateController::class, 'store'])->name('upload');
+
+Route::fallback(function() {
+    return redirect('/');
+});

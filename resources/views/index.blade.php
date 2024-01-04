@@ -10,26 +10,23 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
-        input[type="radio"] + label span {
+        input[type="checkbox"] + label span {
             transition: background .2s,
             transform .2s;
         }
 
-        input[type="radio"] + label span:hover,
-        input[type="radio"] + label:hover span {
+        input[type="checkbox"] + label span:hover,
+        input[type="checkbox"] + label:hover span {
             transform: scale(1.2);
         }
 
-        input[type="radio"]:checked + label span {
+        input[type="checkbox"]:checked + label span {
             background-color: #3490DC;
-        / / bg-blue box-shadow: 0 px 0 px 0 px 2 px white inset;
         }
 
-        input[type="radio"]:checked + label {
+        input[type="checkbox"]:checked + label {
             color: #3490DC;
-        / / text-blue
         }
     </style>
 </head>
@@ -48,14 +45,14 @@
                 <label for="target" class="block mb-2 font-bold text-gray-600">Target</label>
                 <div class="flex">
                     <div class="flex items-center mr-10 mb-4">
-                        <input id="target1" type="radio" name="target" class="hidden" value="vi" checked/>
+                        <input id="target1" type="checkbox" name="target[]" class="hidden" value="vi" checked/>
                         <label for="target1" class="flex items-center cursor-pointer">
                             <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"> </span>
                             VI
                         </label>
                     </div>
                     <div class="flex items-center mr-4 mb-4">
-                        <input id="target2" type="radio" name="target" class="hidden" value="en"/>
+                        <input id="target2" type="checkbox" name="target[]" class="hidden" value="en"/>
                         <label for="target2" class="flex items-center cursor-pointer">
                             <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
                             EN
