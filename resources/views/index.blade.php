@@ -9,67 +9,50 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        input[type="checkbox"] + label span {
-            transition: background .2s,
-            transform .2s;
-        }
-
-        input[type="checkbox"] + label span:hover,
-        input[type="checkbox"] + label:hover span {
-            transform: scale(1.2);
-        }
-
-        input[type="checkbox"]:checked + label span {
-            background-color: #3490DC;
-        }
-
-        input[type="checkbox"]:checked + label {
-            color: #3490DC;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="antialiased">
-<div class="bg-slate-100 min-h-screen flex items-center">
-    <div class="bg-white p-10 rounded-lg shadow-xl md:w-3/4 mx-auto lg:w-[450px]">
-        <h2 class="text-center text-blue-400 font-bold text-2xl uppercase mb-10">Spreadsheet file translate</h2>
+<body style="background-color: rgb(241 245 249)">
+
+<div class="d-flex align-items-center justify-content-center vh-100">
+    <div class="shadow p-5 bg-white rounded">
+        <h2 class="text-center fw-bold mb-5 text-primary text-uppercase">Spreadsheet translate</h2>
         <form action="{{ route('upload') }}" method="post" enctype="multipart/form-data">
             @csrf
-            <div class="mb-5">
-                <label for="source" class="block mb-2 font-bold text-gray-600">Source</label>
-                <input type="text" id="source" name="source" placeholder="Leave blank if wanna auto detect language" class="border border-gray-300 shadow p-3 w-full rounded mb-">
+            <div class="mb-3">
+                <label for="source" class="form-label fw-bold">Source</label>
+                <input type="text" id="source" name="source" class="form-control" placeholder="E.g: vi, en, ja">
+                <div class="form-text">※Leave blank if wanna auto detect language</div>
+            </div>
+            <label for="source" class="form-label d-block mb-1 fw-bold">Target</label>
+            <div class="mb-3 form-check form-check-inline">
+                <input id="target1" type="checkbox" name="target[]" value="vi" checked class="form-check-input">
+                <label class="form-check-label" for="target1">VI</label>
+            </div>
+            <div class="mb-3 form-check form-check-inline">
+                <input id="target2" type="checkbox" name="target[]" value="en" checked class="form-check-input">
+                <label class="form-check-label" for="target2">EN</label>
             </div>
 
-            <div class="mb-5">
-                <label for="target" class="block mb-2 font-bold text-gray-600">Target</label>
-                <div class="flex">
-                    <div class="flex items-center mr-10 mb-4">
-                        <input id="target1" type="checkbox" name="target[]" class="hidden" value="vi" checked/>
-                        <label for="target1" class="flex items-center cursor-pointer">
-                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"> </span>
-                            VI
-                        </label>
-                    </div>
-                    <div class="flex items-center mr-4 mb-4">
-                        <input id="target2" type="checkbox" name="target[]" class="hidden" value="en"/>
-                        <label for="target2" class="flex items-center cursor-pointer">
-                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
-                            EN
-                        </label>
-                    </div>
-                </div>
+            <label for="source" class="form-label d-block mb-1 fw-bold">Options</label>
+            <div class="form-check form-switch">
+                <input class="form-check-input" id="isHighlightSheet" type="checkbox" name="isHighlightSheet" value="1" checked>
+                <label class="form-check-label" for="isHighlightSheet">Highlight Sheet</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" id="isTranslateSheetName" type="checkbox" name="isTranslateSheetName" value="1">
+                <label class="form-check-label" for="isTranslateSheetName">Translate Sheet Name</label>
             </div>
 
-            <div class="mb-8">
-                <input type="file" name="file">
+            <div class="mb-5 mt-3">
+                <input class="form-control" type="file" name="file">
             </div>
 
-            <div class="flex justify-center">
-                <button class="block w-[150px] bg-blue-500 hover:bg-blue-600 transition text-white font-bold p-4 rounded-lg">Submit</button>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary px-4 py-2">Submit</button>
             </div>
         </form>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

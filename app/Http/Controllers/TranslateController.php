@@ -16,6 +16,8 @@ class TranslateController extends Controller
     {
         $output = TranslateSpreadsheet::setTransSource($request->source)
             ->setTransTarget($request->target)
+            ->highlightSheet((bool) $request->isHighlightSheet)
+            ->translateSheetName((bool) $request->isTranslateSheetName)
             ->translate($request->file('file'));
         return response()->download($output)->deleteFileAfterSend(true);
     }
