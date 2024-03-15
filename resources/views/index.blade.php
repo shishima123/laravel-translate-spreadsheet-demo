@@ -33,6 +33,12 @@
                 <label class="form-check-label" for="target2">EN</label>
             </div>
 
+            <label for="source" class="form-label d-block mb-1 fw-bold">Engine</label>
+            <select class="form-select mb-3" name="translateEngine" aria-label="Default select example">
+                <option value="google" selected>Google Translate</option>
+                <option value="gemini">Gemini AI</option>
+            </select>
+
             <label for="source" class="form-label d-block mb-1 fw-bold">Options</label>
             <div class="form-check form-switch">
                 <input class="form-check-input" id="isHighlightSheet" type="checkbox" name="isHighlightSheet" value="1" checked>
