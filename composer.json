@@ -12,6 +12,7 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "phpoffice/phpspreadsheet": "^1.29",
+        "shishima/dynamic-view-value-render": "dev-master",
         "shishima/laravel-translate-spreadsheet": "dev-main",
         "stichoza/google-translate-php": "^5.1"
     },
@@ -71,6 +72,10 @@
         {
             "type": "path",
             "url": "packages/shishima/laravel-translate-spreadsheet/"
+        },
+        {
+            "type": "path",
+            "url": "packages/shishima/dynamic-view-value-render/"
         }
     ]
 }

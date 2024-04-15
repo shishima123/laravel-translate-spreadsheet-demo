@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90da7a017c6e951eea02b3af4c0afc3f",
+    "content-hash": "96f25b79a24e86c00f339b040d3cefb7",
     "packages": [
         {
             "name": "brick/math",
@@ -3671,15 +3671,63 @@
             "time": "2023-11-08T05:53:05+00:00"
         },
         {
+            "name": "shishima/dynamic-view-value-render",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "packages/shishima/dynamic-view-value-render",
+                "reference": "58edc7c252ddee6726e6591c6a4cba723695ea5f"
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Shishima\\ConvertExport\\ConvertExportServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Shishima\\ConvertExport\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Phuoc Nguyen",
+                    "email": "shishima21@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This package supports displaying values in views files according to predefined configurations.",
+            "homepage": "https://github.com/shishima/dynamic-view-value-render",
+            "keywords": [
+                "Shishima",
+                "dynamic-view-value-render",
+                "laravel"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "shishima/laravel-translate-spreadsheet",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "packages/shishima/laravel-translate-spreadsheet",
-                "reference": "ac29a7f246702699cfff1fc253614d3fba182a0c"
+                "reference": "406381adcbe83d8979850ed4187389d1259213f9"
             },
             "require": {
-                "illuminate/support": "^8.0|^9.0|^10.0",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
                 "php": "^8.1",
                 "phpoffice/phpspreadsheet": "^1.29",
                 "stichoza/google-translate-php": "^5.1"
