@@ -11,10 +11,25 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body style="background-color: rgb(241 245 249)">
 
+<style>
+    body {
+        background-color: rgb(241 245 249)
+    }
+
+    .content-height {
+        height: auto;
+    }
+
+    @media only screen and (max-width: 767px) {
+        .content-height {
+            height: 100%;
+        }
+    }
+</style>
+<body>
 <div class="d-flex align-items-center justify-content-center vh-100">
-    <div class="shadow p-5 bg-white rounded">
+    <div class="p-5 bg-white rounded flex-grow-1 content-height flex-md-grow-0 md-shadow">
         <h2 class="text-center fw-bold mb-5 text-primary text-uppercase">Spreadsheet translate</h2>
         <form action="{{ route('upload') }}" method="post" enctype="multipart/form-data">
             @csrf
@@ -50,7 +65,7 @@
             </div>
 
             <div class="mb-5 mt-3">
-                <input class="form-control" type="file" name="file">
+                <input class="form-control" type="file" name="file" accept=".xls,.xlsx">
             </div>
 
             <div class="text-center">
